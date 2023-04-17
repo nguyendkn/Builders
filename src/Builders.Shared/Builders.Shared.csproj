@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="nguyendk.DotnetExtensions.NET" Version="1.0.0.6" />
+      <PackageReference Include="nguyendk.MinimalAPIs.NET" Version="1.0.0" />
+      <PackageReference Include="nguyendk.SQLServer.NET" Version="1.0.0" />
+    </ItemGroup>
+
+</Project>
