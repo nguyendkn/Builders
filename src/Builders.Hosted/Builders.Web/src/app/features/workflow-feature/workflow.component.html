@@ -1,12 +1,19 @@
-<div class="container mx-auto border">
-    <div class="actions">
-        <button nz-button nzType="primary" i18n (click)="onPushWorkflow()">Thêm mới</button>
+<div class="mx-auto border p-[10px]">
+    <div class="actions flex mb-1">
+        <button class="w-full" nz-button nzType="primary" i18n (click)="onPushWorkflow()">Thêm mới</button>
     </div>
     <div class="workflows">
-        <div class="workflow-item flex" *ngFor="let workflow of workflows">
-            <div class="workflow-step-item" *ngFor="let step of workflow.steps">
-                .......................
-            </div>
-        </div>
+        <builder-treeview/>
+        <!--        <div class="workflow-item flex h-[30px] border mb-1" *ngFor="let workflow of workflows">-->
+        <!--            <div class="meta-data">-->
+        <!--                <div class="name">-->
+        <!--                    <label class="font-bold">Tên</label>-->
+        <!--                    <input type="text">-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="workflow-step-item h-[30px]" *ngFor="let step of workflow.steps">-->
+        <!--                .......................-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
 </div>

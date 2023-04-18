@@ -32,6 +32,9 @@
       ],
       "@shared/models": [
         "src/app/shared/models"
+      ],
+      "@shared/components": [
+        "src/app/shared/components"
       ]
     }
   },
