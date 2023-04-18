@@ -1,0 +1,19 @@
+﻿<ul>
+    <ng-container *ngFor="let node of treeData">
+        <li>
+            <a href="javascript:void(0);">
+                <div class="member-view-box">
+                    <div class="member-image">
+                        <i class="fa-sharp fa-light fa-vacuum-robot border p-[15px] rounded"></i>
+                        <div class="member-details">
+                            <h3>{{node.name}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <ng-container *ngIf="node.children && node.children.length > 0">
+                <treeview-node [treeData]="node.children"></treeview-node>
+            </ng-container>
+        </li>
+    </ng-container>
+</ul>

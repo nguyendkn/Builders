@@ -1,18 +1,41 @@
-﻿import {Component, ElementRef, OnInit, Renderer2} from "@angular/core";
+﻿import {Component, ElementRef, Input, OnInit, Renderer2} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import {TreeviewNodeComponent} from "./components/treeview-node.component";
 
 @Component({
     standalone: true,
-    selector: 'builder-treeview',
+    selector: 'builders-treeview',
     templateUrl: './treeview.component.html',
-    imports: [CommonModule]
+    imports: [CommonModule, TreeviewNodeComponent]
 })
 export class TreeviewComponent implements OnInit {
+    
     constructor(
         private readonly el: ElementRef,
         private readonly renderer: Renderer2
     ) {
     }
+
+    data = [
+        {
+            "name": "Parent",
+            "children": [
+                {
+                    "name": "Child 1",
+                    "children": [
+                        {
+                            "name": "Child 1.1",
+                            "children": []
+                        },
+                        {
+                            "name": "Child 1.2",
+                            "children": []
+                        },
+                    ]
+                },
+            ]
+        }
+    ];
 
     ngOnInit() {
         this.initializeTree()
