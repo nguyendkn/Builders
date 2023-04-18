@@ -1,5 +1,12 @@
-<div class="container">
+<div class="container mx-auto border">
     <div class="actions">
-        <button i18n>Thêm mới</button>
+        <button nz-button nzType="primary" i18n (click)="onPushWorkflow()">Thêm mới</button>
+    </div>
+    <div class="workflows">
+        <div class="workflow-item flex" *ngFor="let workflow of workflows">
+            <div class="workflow-step-item" *ngFor="let step of workflow.steps">
+                .......................
+            </div>
+        </div>
     </div>
 </div>

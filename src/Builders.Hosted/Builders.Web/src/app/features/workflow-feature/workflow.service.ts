@@ -3,6 +3,9 @@ import {HttpClient} from "@angular/common/http";
 import {Store} from "@ngxs/store";
 import {BaseService, baseUrl} from '@shared/services';
 import {WorkflowList} from "./workflow.state";
+import {IWorkflow, IWorkflowListRequest, IWorkflowStateResponse} from "./workflow.model";
+import {map, Observable} from "rxjs";
+import {IResponse} from "../../shared/models/response";
 
 @Injectable({providedIn: 'root'})
 export class WorkflowService extends BaseService {
@@ -15,9 +18,8 @@ export class WorkflowService extends BaseService {
         this.setEndpoint(hostUrl, 'storage/api/v1');
     }
 
-    list() {
-        this.httpClient.get<any[]>(this.createUrl("list")).subscribe((items) => {
-            this.store.dispatch(new WorkflowList(items));
-        });
+    list(payload: IWorkflowListRequest): Observable<IWorkflowStateResponse[]> {
+        return this.httpClient.get<IResponse<IWorkflowStateResponse[]>>(this.createUrl("list"))
+            .pipe(map((response) => response.data));
     }
 }

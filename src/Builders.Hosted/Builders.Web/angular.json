@@ -56,6 +56,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -64,6 +65,11 @@
             "en": {
               "localize": [
                 "en"
+              ]
+            },
+            "vi": {
+              "localize": [
+                "vi"
               ]
             },
             "production": {
@@ -98,6 +104,9 @@
             "en": {
               "browserTarget": "builders:build:development,en"
             },
+            "vi": {
+              "browserTarget": "builders:build:development,vi"
+            },
             "production": {
               "browserTarget": "builders:build:production"
             },
@@ -121,6 +130,9 @@
         "locales": {
           "en": {
             "translation": "src/locale/messages.en.xlf"
+          },
+          "vi": {
+            "translation": "src/locale/messages.vi.xlf"
           }
         }
       }

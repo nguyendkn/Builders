@@ -3,7 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
@@ -29,6 +29,9 @@
       ],
       "@shared/services": [
         "src/app/shared/services"
+      ],
+      "@shared/models": [
+        "src/app/shared/models"
       ]
     }
   },

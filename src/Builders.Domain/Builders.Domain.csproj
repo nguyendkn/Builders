@@ -10,8 +10,4 @@
       <ProjectReference Include="..\Builders.Shared\Builders.Shared.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="AggregateModels\WorkflowAggregate\" />
-    </ItemGroup>
-
 </Project>

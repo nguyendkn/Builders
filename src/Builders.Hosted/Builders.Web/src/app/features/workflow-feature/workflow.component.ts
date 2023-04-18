@@ -1,16 +1,31 @@
 import {Component} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {WorkflowService} from "./workflow.service";
+import {NzButtonModule} from "ng-zorro-antd/button";
+import {IWorkflow} from "./workflow.model";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
-    standalone: true,
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        NzButtonModule,
+    ],
     selector: 'workflow',
-    templateUrl: './workflow.component.html',
-    imports: [CommonModule]
+    standalone: true,
+    templateUrl: './workflow.component.html'
 })
 export class WorkflowComponent {
+    workflows: IWorkflow[] = [];
+
     constructor(
         private readonly workflowService: WorkflowService
     ) {
+    }
+
+    onPushWorkflow() {
+        this.workflows.push({
+            name: ''
+        })
     }
 }
