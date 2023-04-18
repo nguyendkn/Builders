@@ -2,7 +2,7 @@
     <div class="genealogy-tree">
         <ul>
             <ng-container *ngFor="let node of data">
-                <li>
+                <li [ngStyle]="{'transform': 'scale(' + scale + ')'}">
                     <a href="javascript:void(0);">
                         <div class="member-view-box">
                             <div class="member-image">
@@ -21,10 +21,10 @@
         </ul>
     </div>
     <div class="controls absolute bottom-0 right-0">
-        <div class="zoom-in border radius mb-[5px] cursor-pointer hover:bg-gray-100">
+        <div class="zoom-in border radius mb-[5px] cursor-pointer hover:bg-gray-100" (click)="zoomIn()">
             <i class="fa-regular fa-magnifying-glass-plus p-[10px]"></i>
         </div>
-        <div class="zoom-out border radius cursor-pointer hover:bg-gray-100">
+        <div class="zoom-out border radius cursor-pointer hover:bg-gray-100" (click)="zoomOut()">
             <i class="fa-regular fa-magnifying-glass-minus p-[10px]"></i>
         </div>
     </div>

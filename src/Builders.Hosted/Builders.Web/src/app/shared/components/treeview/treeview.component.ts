@@ -9,7 +9,8 @@ import {TreeviewNodeComponent} from "./components/treeview-node.component";
     imports: [CommonModule, TreeviewNodeComponent]
 })
 export class TreeviewComponent implements OnInit {
-    
+    scale: number = 1;
+
     constructor(
         private readonly el: ElementRef,
         private readonly renderer: Renderer2
@@ -70,5 +71,13 @@ export class TreeviewComponent implements OnInit {
                 }
             });
         });
+    }
+
+    zoomIn() {
+        this.scale += 0.1;
+    }
+
+    zoomOut() {
+        this.scale -= 0.1;
     }
 }
