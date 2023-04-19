@@ -1,4 +1,4 @@
-﻿<div class="body genealogy-body genealogy-scroll relative">
+﻿<div class="body genealogy-body genealogy-scroll overflow-scroll">
     <div class="genealogy-tree">
         <ul>
             <ng-container *ngFor="let node of data">
@@ -20,11 +20,11 @@
             </ng-container>
         </ul>
     </div>
-    <div class="controls absolute bottom-0 right-0">
-        <div class="zoom-in border radius mb-[5px] cursor-pointer hover:bg-gray-100" (click)="zoomIn()">
+    <div class="controls fixed bottom-[26px] right-[30px]">
+        <div class="zoom-in border radius mb-[5px] cursor-pointer bg-gray-100 hover:bg-gray-200" (click)="zoomIn()">
             <i class="fa-regular fa-magnifying-glass-plus p-[10px]"></i>
         </div>
-        <div class="zoom-out border radius cursor-pointer hover:bg-gray-100" (click)="zoomOut()">
+        <div class="zoom-out border radius cursor-pointer bg-gray-100 hover:bg-gray-200" (click)="zoomOut()">
             <i class="fa-regular fa-magnifying-glass-minus p-[10px]"></i>
         </div>
     </div>

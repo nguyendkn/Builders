@@ -26,11 +26,185 @@ export class TreeviewComponent implements OnInit {
                     "children": [
                         {
                             "name": "Child 1.1",
-                            "children": []
+                            "children": [
+                                {
+                                    "name": "Child 1.2",
+                                    "children": []
+                                },
+                                {
+                                    "name": "Child 1.2",
+                                    "children": [
+                                        {
+                                            "name": "Child 1.2",
+                                            "children": []
+                                        },
+                                        {
+                                            "name": "Child 1.2",
+                                            "children": [
+                                                {
+                                                    "name": "Child 1.2",
+                                                    "children": [
+                                                        {
+                                                            "name": "Child 1.2",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "name": "Child 1.2",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": []
+                                                                },
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": []
+                                                                },
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Child 1.2",
+                                                                            "children": []
+                                                                        },
+                                                                        {
+                                                                            "name": "Child 1.2",
+                                                                            "children": []
+                                                                        },
+                                                                        {
+                                                                            "name": "Child 1.2",
+                                                                            "children": []
+                                                                        },
+                                                                        {
+                                                                            "name": "Child 1.2",
+                                                                            "children": []
+                                                                        },
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": []
+                                                                },
+                                                            ]
+                                                        },
+                                                    ]
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            "name": "Child 1.2",
+                                            "children": []
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Child 1.2",
+                                    "children": []
+                                },
+                                {
+                                    "name": "Child 1.2",
+                                    "children": []
+                                },
+                                {
+                                    "name": "Child 1.2",
+                                    "children": []
+                                },
+                            ]
                         },
                         {
                             "name": "Child 1.2",
-                            "children": []
+                            "children": [
+                                {
+                                    "name": "Child 1.2",
+                                    "children": [
+                                        {
+                                            "name": "Child 1.2",
+                                            "children": [
+                                                {
+                                                    "name": "Child 1.2",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "name": "Child 1.2",
+                                                    "children": []
+                                                },
+                                            ]
+                                        },
+                                        {
+                                            "name": "Child 1.2",
+                                            "children": [
+                                                {
+                                                    "name": "Child 1.2",
+                                                    "children": [
+                                                        {
+                                                            "name": "Child 1.2",
+                                                            "children": [
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": []
+                                                                },
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": []
+                                                                },
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "Child 1.2",
+                                                                            "children": []
+                                                                        },
+                                                                        {
+                                                                            "name": "Child 1.2",
+                                                                            "children": [
+                                                                                {
+                                                                                    "name": "Child 1.2",
+                                                                                    "children": []
+                                                                                },
+                                                                            ]
+                                                                        },
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": []
+                                                                },
+                                                                {
+                                                                    "name": "Child 1.2",
+                                                                    "children": []
+                                                                },
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "Child 1.2",
+                                                            "children": []
+                                                        },
+                                                        {
+                                                            "name": "Child 1.2",
+                                                            "children": []
+                                                        },
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Child 1.2",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "name": "Child 1.2",
+                                                    "children": []
+                                                },
+                                            ]
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Child 1.2",
+                                    "children": []
+                                },
+                                {
+                                    "name": "Child 1.2",
+                                    "children": []
+                                },
+                            ]
                         },
                     ]
                 },

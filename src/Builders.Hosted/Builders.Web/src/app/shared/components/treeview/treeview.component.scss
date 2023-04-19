@@ -1,133 +1,114 @@
-﻿.genealogy-scroll::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-}
+﻿.genealogy-scroll {
+  &::-webkit-scrollbar {
+    @apply w-[5px] h-[5px];
+  }
 
-.genealogy-scroll::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: #e4e4e4;
-}
+  &::-webkit-scrollbar-track {
+    @apply bg-[#e4e4e4];
+  }
 
-.genealogy-scroll::-webkit-scrollbar-thumb {
-  background: #212121;
-  border-radius: 10px;
-  transition: 0.5s;
-}
+  &::-webkit-scrollbar-thumb {
+    @apply bg-[#212121] transition-all duration-500;
 
-.genealogy-scroll::-webkit-scrollbar-thumb:hover {
-  background: #d5b14c;
-  transition: 0.5s;
+    &:hover {
+      @apply bg-[#d5b14c] transition-all duration-500;
+    }
+  }
 }
-
 
 .genealogy-body {
-  white-space: nowrap;
-  overflow-y: hidden;
-  min-height: 500px;
-  padding: 10px 50px 50px;
+  @apply whitespace-nowrap min-h-[500px] max-h-[calc(100vh-55px)] p-0 py-[50px] px-[50px];
 }
 
-.genealogy-tree ul {
-  padding-top: 20px;
-  position: relative;
-  padding-left: 0px;
-  display: flex;
-}
+.genealogy-tree {
+  ul {
+    @apply pt-[20px] relative pl-0 flex;
+  }
 
-.genealogy-tree li {
-  float: left;
-  text-align: center;
-  list-style-type: none;
-  position: relative;
-  padding: 20px 5px 0 5px;
-}
+  li {
+    @apply float-left text-center list-none relative p-0 py-[20px] px-[5px];
 
-.genealogy-tree li::before, .genealogy-tree li::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 50%;
-  border-top: 2px solid #ccc;
-  width: 50%;
-  height: 18px;
-}
+    &::before, &::after {
+      content: '';
+      @apply absolute top-0 right-[50%] border-t-2 border-[#ccc] w-[50%] h-[18px];
+    }
 
-.genealogy-tree li::after {
-  right: auto;
-  left: 50%;
-  border-left: 2px solid #ccc;
-}
+    &::after {
+      @apply right-auto left-[50%] border-l-2 border-[#ccc];
+    }
 
-.genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
-  display: none;
-}
+    &:only-child {
+      &::after, &::before {
+        @apply hidden;
+      }
 
-.genealogy-tree li:only-child {
-  padding-top: 0;
-}
+      @apply pt-0;
+    }
 
-.genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after {
-  border: 0 none;
-}
+    &:first-child {
+      &::before {
+        @apply border-0 border-none;
+      }
 
-.genealogy-tree li:last-child::before {
-  border-right: 2px solid #ccc;
-  border-radius: 0 5px 0 0;
-  -webkit-border-radius: 0 5px 0 0;
-  -moz-border-radius: 0 5px 0 0;
-}
+      &::after {
+        border-radius: 5px 0 0 0;
+        -webkit-border-radius: 5px 0 0 0;
+        -moz-border-radius: 5px 0 0 0;
+      }
+    }
 
-.genealogy-tree li:first-child::after {
-  border-radius: 5px 0 0 0;
-  -webkit-border-radius: 5px 0 0 0;
-  -moz-border-radius: 5px 0 0 0;
-}
+    &:last-child {
+      &::before {
+        border-radius: 0 5px 0 0;
+        -webkit-border-radius: 0 5px 0 0;
+        -moz-border-radius: 0 5px 0 0;
+        @apply border-r-2 border-[#ccc];
+      }
 
-.genealogy-tree ul ul::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  border-left: 2px solid #ccc;
-  width: 0;
-  height: 20px;
-}
+      &::after {
+        @apply border-0 border-none;
+      }
+    }
+  }
 
-.genealogy-tree li a {
-  text-decoration: none;
-  color: #666;
-  font-family: arial, verdana, tahoma, serif;
-  font-size: 11px;
-  display: inline-block;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-}
+  ul {
+    ul {
+      &::before {
+        content: '';
+        @apply absolute top-0 left-[50%] border-l-2 border-[#ccc] w-0 h-[20px];
+      }
+    }
+  }
 
-.genealogy-tree li a:hover + ul li::after,
-.genealogy-tree li a:hover + ul li::before,
-.genealogy-tree li a:hover + ul::before,
-.genealogy-tree li a:hover + ul ul::before {
-  border-color: #fbba00;
-}
+  li {
+    a {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      @apply no-underline text-[#666] font-sans text-xs inline-block rounded;
 
+      &:hover {
+        + ul {
+          li {
+            &::after, &::before {
+              @apply border-[#fbba00];
+            }
+          }
+
+          &::before, ul {
+            &::before {
+              @apply border-[#fbba00];
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .member-view-box {
-  padding: 0 20px;
-  text-align: center;
-  border-radius: 4px;
-  position: relative;
+  @apply p-0 px-[20px] text-center rounded relative;
 }
 
 .member-image {
-  width: 60px;
-  position: relative;
-}
-
-.member-image img {
-  width: 60px;
-  height: 60px;
-  border-radius: 6px;
-  background-color: #000;
-  z-index: 1;
+  @apply w-[60px] relative;
 }
