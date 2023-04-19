@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{html,ts}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      cursor: { 
+        'grab': 'grab',
+        'grabbing': 'grabbing',
+      },
+    },
   },
   plugins: [],
 }

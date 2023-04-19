@@ -112,3 +112,7 @@
 .member-image {
   @apply w-[60px] relative;
 }
+
+.scroll-container {
+  @apply w-full h-screen overflow-auto relative cursor-grab
+}

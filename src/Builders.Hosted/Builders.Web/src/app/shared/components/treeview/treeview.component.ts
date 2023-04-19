@@ -1,4 +1,4 @@
-﻿import {Component, ElementRef, Input, OnInit, Renderer2} from "@angular/core";
+﻿import {Component, ElementRef, HostListener, OnInit, Renderer2} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {TreeviewNodeComponent} from "./components/treeview-node.component";
 
@@ -10,6 +10,13 @@ import {TreeviewNodeComponent} from "./components/treeview-node.component";
 })
 export class TreeviewComponent implements OnInit {
     scale: number = 1;
+    cursorStyle = 'grab';
+    private spaceKeyDown = false;
+    private mouseDown = false;
+    private startX = 0;
+    private startY = 0;
+    private scrollLeft = 0;
+    private scrollTop = 0;
 
     constructor(
         private readonly el: ElementRef,
@@ -253,5 +260,51 @@ export class TreeviewComponent implements OnInit {
 
     zoomOut() {
         this.scale -= 0.1;
+    }
+
+    @HostListener('window:keydown', ['$event'])
+    onKeyDown(event: KeyboardEvent): void {
+        if (event.code === 'Space') {
+            this.spaceKeyDown = true;
+            this.cursorStyle = 'grabbing';
+            event.preventDefault();
+        }
+    }
+
+    @HostListener('window:keyup', ['$event'])
+    onKeyUp(event: KeyboardEvent): void {
+        if (event.code === 'Space') {
+            this.spaceKeyDown = false;
+            this.cursorStyle = 'grab';
+        }
+    }
+
+    onMouseDown(event: MouseEvent): void {
+        const scrollContainer = document.getElementById('scrollContainer');
+        if (this.spaceKeyDown && event.button === 0 && scrollContainer) {
+            this.mouseDown = true;
+            this.startX = event.pageX;
+            this.startY = event.pageY;
+            this.scrollLeft = scrollContainer.scrollLeft;
+            this.scrollTop = scrollContainer.scrollTop;
+            event.preventDefault();
+        }
+    }
+
+    onMouseUp(): void {
+        this.mouseDown = false;
+    }
+
+    onMouseMove(event: MouseEvent): void {
+        if (!this.mouseDown) return;
+        const scrollContainer = document.getElementById('scrollContainer');
+        if (scrollContainer) {
+            const x = event.pageX;
+            const y = event.pageY;
+            const walkX = x - this.startX;
+            const walkY = y - this.startY;
+            scrollContainer.scrollLeft = this.scrollLeft - walkX;
+            scrollContainer.scrollTop = this.scrollTop - walkY;
+        }
     }
 }

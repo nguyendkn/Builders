@@ -1,4 +1,6 @@
-﻿<div class="body genealogy-body genealogy-scroll overflow-scroll">
+﻿<div class="body genealogy-body genealogy-scroll scroll-container overflow-scroll" id="scrollContainer"
+     (mousedown)="onMouseDown($event)" (mousemove)="onMouseMove($event)" (mouseup)="onMouseUp()"
+     [ngStyle]="{ 'cursor': cursorStyle }">
     <div class="genealogy-tree">
         <ul>
             <ng-container *ngFor="let node of data">
