@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./styles/antd";
 @import "./assets/libs/fontawesome/css/all.css";
 @import "./app/shared/components/treeview/treeview.component";

@@ -41,8 +41,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": true,
-            "i18nMissingTranslation": "error",
             "outputPath": "dist/builders",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -62,16 +60,6 @@
             "scripts": []
           },
           "configurations": {
-            "en": {
-              "localize": [
-                "en"
-              ]
-            },
-            "vi": {
-              "localize": [
-                "vi"
-              ]
-            },
             "production": {
               "budgets": [
                 {
@@ -101,12 +89,6 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "en": {
-              "browserTarget": "builders:build:development,en"
-            },
-            "vi": {
-              "browserTarget": "builders:build:development,vi"
-            },
             "production": {
               "browserTarget": "builders:build:production"
             },
@@ -115,25 +97,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "builders:build",
-            "format": "xlf",
-            "outputPath": "src/locale"
-          }
-        }
-      },
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "en": {
-            "translation": "src/locale/messages.en.xlf"
-          },
-          "vi": {
-            "translation": "src/locale/messages.vi.xlf"
-          }
         }
       }
     }

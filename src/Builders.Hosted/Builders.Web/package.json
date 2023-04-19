@@ -4,10 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:en": "ng serve --open --configuration=en",
-    "start:vi": "ng serve --open --configuration=vi",
     "build": "ng build",
-    "i18n": "ng extract-i18n",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,

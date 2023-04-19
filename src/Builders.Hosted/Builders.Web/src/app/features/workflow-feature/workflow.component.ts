@@ -5,13 +5,17 @@ import {NzButtonModule} from "ng-zorro-antd/button";
 import {IWorkflow} from "./workflow.model";
 import {HttpClientModule} from "@angular/common/http";
 import {TreeviewComponent} from "@shared/components";
+import {NzDrawerModule} from "ng-zorro-antd/drawer";
+import {NzTableModule} from "ng-zorro-antd/table";
 
 @Component({
     imports: [
         CommonModule,
         HttpClientModule,
         NzButtonModule,
-        TreeviewComponent
+        TreeviewComponent,
+        NzDrawerModule,
+        NzTableModule
     ],
     selector: 'workflow',
     standalone: true,
@@ -19,6 +23,7 @@ import {TreeviewComponent} from "@shared/components";
 })
 export class WorkflowComponent implements OnInit {
     workflows: IWorkflow[] = [];
+    drawerToggle: boolean = false;
 
     constructor(
         private readonly workflowService: WorkflowService,
@@ -28,6 +33,10 @@ export class WorkflowComponent implements OnInit {
     }
 
     ngOnInit() {
+    }
+    
+    onToggleDrawer() {
+        this.drawerToggle = !this.drawerToggle;
     }
 
     onPushWorkflow() {

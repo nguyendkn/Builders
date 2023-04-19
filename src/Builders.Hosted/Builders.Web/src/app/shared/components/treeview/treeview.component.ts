@@ -9,7 +9,6 @@ import {TreeviewNodeComponent} from "./components/treeview-node.component";
     imports: [CommonModule, TreeviewNodeComponent]
 })
 export class TreeviewComponent implements OnInit {
-    scale: number = 1;
     cursorStyle = 'grab';
     private spaceKeyDown = false;
     private mouseDown = false;
@@ -252,14 +251,6 @@ export class TreeviewComponent implements OnInit {
                 }
             });
         });
-    }
-
-    zoomIn() {
-        this.scale += 0.1;
-    }
-
-    zoomOut() {
-        this.scale -= 0.1;
     }
 
     @HostListener('window:keydown', ['$event'])

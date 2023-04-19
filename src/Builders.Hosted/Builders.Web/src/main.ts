@@ -10,6 +10,9 @@ import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
 import {RouterModule, Routes} from "@angular/router";
 import {WorkflowState} from "./app/features/workflow-feature/workflow.state";
 import {HttpClientModule} from "@angular/common/http";
+import {registerLocaleData} from "@angular/common";
+import en from '@angular/common/locales/en';
+import {en_US, NZ_I18N} from "ng-zorro-antd/i18n";
 
 const routes: Routes = [
     {
@@ -36,7 +39,7 @@ const routes: Routes = [
 if (environment.production) {
     enableProdMode();
 }
-
+registerLocaleData(en);
 bootstrapApplication(AppComponent, {
     providers: [importProvidersFrom(
         BrowserModule,
@@ -57,5 +60,5 @@ bootstrapApplication(AppComponent, {
             disabled: environment.production,
         }),
         RouterModule.forRoot(routes),
-    )]
+    ), { provide: NZ_I18N, useValue: en_US }]
 }).catch(err => console.error(err));

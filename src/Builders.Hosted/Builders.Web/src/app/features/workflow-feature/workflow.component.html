@@ -1,8 +1,42 @@
 <div class="mx-auto border p-[10px]">
     <div class="actions flex mb-1">
-        <button class="w-full" nz-button nzType="primary" i18n (click)="onPushWorkflow()">Thêm mới</button>
+        <button class="w-[calc(100%-4px)] mr-[4px]" nz-button nzType="primary" i18n (click)="onPushWorkflow()">
+            Push
+        </button>
+        <button class="w-[calc(100%-4px)] ml-[4px]" nz-button nzType="primary" i18n (click)="onToggleDrawer()">
+            Workflows
+        </button>
     </div>
     <div class="workflows">
         <builders-treeview/>
     </div>
 </div>
+<nz-drawer class="p-0"
+           [nzClosable]="true"
+           [nzVisible]="drawerToggle"
+           nzPlacement="right"
+           nzTitle="Basic Drawer"
+           (nzOnClose)="onToggleDrawer()"
+>
+    <ng-container *nzDrawerContent>
+        <nz-table #smallTable nzSize="small"
+                  [nzData]="workflows" nzBordered>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Nodes</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let data of smallTable.data">
+                <td>{{ data.name }}</td>
+                <td>10</td>
+                <td>
+                    <a>Display</a>
+                </td>
+            </tr>
+            </tbody>
+        </nz-table>
+    </ng-container>
+</nz-drawer>
